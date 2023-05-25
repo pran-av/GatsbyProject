@@ -1,4 +1,4 @@
-##Step 1: Installation and Setup
+## Step 1: Installation and Setup
 
 I wanted to complete this project without installing an IDE into my system -- so I started with using Replit. But Replit did not have a pre-designed Gatsby repl. I tried configuring using a basic nix project, but failed.
 
@@ -7,7 +7,7 @@ I ended up installing Visual Basic to my system. And then adding gatsby and othe
 - Spending some time with ChatGPT, I found a way to create a gatsby project without setting up the node modules path to my system. I created a project directory and then ran the following command in terminal to setup my project: `./node_modules/.bin/gatsby new ProjectName`
 - Next step was to open the created project in VisualB and setup version control. Without moving to Github I was able to create a repo and commit the initial code from VB itself.
 
-##Step 2: Adding the Plugins
+## Step 2: Adding the Plugins
 - First came Tailwind CSS -- this was a simple three step process:
    - `npm install tailwindcss postcss autoprefixer`
    - `npx tailwindcss init`
@@ -27,7 +27,7 @@ I ended up installing Visual Basic to my system. And then adding gatsby and othe
    - And then imported this global css file into _gatsby browser config_ file `import './src/styles/tailwind.css';`
    - All installed plugins are auto-added to _package.json_, but in _gatsby config_ file certain plugins are to be declared. In this case we added: `gatsby-plugin-postcss`
 
-   ##Step 3: Integrating Contentful and Dotenv
+## Step 3: Integrating Contentful and Dotenv
 - I installed Contentful to use it as a CMS to manage all of the content. Contentful supports GraphQL, that means I get to create a schema without making tables and then extract the exact data I need using qraphql queries. `npm install gatsby-source-contentful`
 - Contentful config just required us to add it as a plugin to the _gatsby config_ file and pass the API key and Space Key. Next installed the dotenv to avoid doxing the keys `npm install dotenv`.
 - To make _dotenv_ to work, post installation we need to create a `.env` file in root of our project and pass our keys as variables. To avoid git commiting this file to repo, we need to add `.env*` to our _.gitignore_ file. The asterick defines any similar dotenv files -- these could be multiple based on environments, like `.env.development` or `.env.production`.
@@ -41,7 +41,7 @@ I ended up installing Visual Basic to my system. And then adding gatsby and othe
 - There two other plugins we installed, `gatsby-transformer-remark` to convert markdown files to html, and `gatsby-source-filesystem` which from what I understand as of now interprets content files as graphql nodes.
 - There are bunch of other plugins to help with SEO, image handling, etc -- we will explore them in future if required.
 
-##Step 4: Writing the first Component
+## Step 4: Writing the first Component
 - I picked up Navigation as the first component to build. As a first build just created a normal function _Navigation_ returning an h1 value along with a parameter `{title}`.
 - New learning here was the usage of `prop-types` library. PropTypes are used to manipulate properties/parameters of a function.
 - We used `FunctionName.defaulProps` to declare a default title string. And declared _title_ as a string with `FunctionName.propTypes`.
@@ -49,7 +49,7 @@ I ended up installing Visual Basic to my system. And then adding gatsby and othe
 - Finally, to display something on screen we created an _index.js_ file, imported our component here, and added the navigation component with a `div` block in it.
 ![GatsbyProject_NavComponent_Output1](//images.ctfassets.net/0zperb7h35e6/6xGPrsMGX2pHR0q6VOWsPT/17759df656d5fb78dade80eeded73f15/GatsbyProject_NavBar_1.png)
 
-##Step 5: Building a complete NavBar
+## Step 5: Building a complete NavBar
 - This is when we test our tailwind integration. Apart from tailwind we use the gatsby _Link_ library to add internal links to pages. For external links we still use the html _a_ tag.
 - With Link we pass a _to_ parameter defining the path. Making the syntax like `<Link to='/internalLink'> New Page </Link>`.
 - Tailwind classes we pass as a class within our html tags. For instance the above code becomes: 
