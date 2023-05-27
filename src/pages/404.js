@@ -1,16 +1,22 @@
-import * as React from "react"
+import * as React from "react";
+import { Link } from "gatsby";
 
-/*
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 
-const NotFoundPage = () => (
-  <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+function NotFound() {
+  return (
+    <>
+      <Layout>
+      <div>
+        <div class="mx-auto ml-3 mr-3 text-center">
+          <h1 class="text-3xl justify-center text-center mb-3 mt-4">Schodinger's Link</h1>
+          <p class="mt-2 mb-2 font-mono">You have stumbled across unknown!</p>
+          <Link to="/" class="font-mono w-auto text-gray-300 hover:text-white duration-500">Click here to return Home</Link>
+        </div>
+      </div>
+      </Layout>
+    </>
+  )
+}
 
-export const Head = () => <Seo title="404: Not Found" />
-
-export default NotFoundPage
-*/
+export default NotFound
