@@ -1,8 +1,13 @@
 import React from "react";
-import Navigation from "../components/navigation";
+import Layout from "../components/layout";
+import DisplayProjects from "../components/displayprojectCard";
 
 export default function Home() {
   return(
-    <Navigation />
+    <>
+      <Layout />
+      <DisplayProjects />
+    </>
+    
   )
 }
