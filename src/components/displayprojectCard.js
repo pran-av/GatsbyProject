@@ -28,18 +28,18 @@ function DisplayProjects() {
           <div>
             <h1> FIRST BLOG </h1>
             <div>
-            {
-                  latestProjects.edges.map(edge => {
-                    return(
-                      <ProjectCard
-                          slug = {edge.node.slug}
-                          title = {edge.node.title}
-                          dateTime = {edge.node.dateTime}
-                          description = {edge.node.description}
-                          tags = {edge.node.tags}
-                      />
-                    )                      
-                  })
+              {
+                latestProjects.edges.map(edge => {
+                  return(
+                    <ProjectCard
+                        slug = {edge.node.slug}
+                        title = {edge.node.title}
+                        dateTime = {edge.node.dateTime}
+                        description = {edge.node.description.description}
+                        tags = {edge.node.tags}
+                    />
+                  )                      
+                })
               }
             </div>
           </div>
