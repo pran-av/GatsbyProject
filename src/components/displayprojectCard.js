@@ -6,18 +6,17 @@ import { graphql, useStaticQuery } from "gatsby";
 function DisplayProjects() {
 
     const projects = useStaticQuery(graphql`
-    query {
-        allContentfulProjects {
-          edges {
-            node {
-              title
-              slug
-              dateTime
-              description{
-                description
-              }
-              tags
+      query projectCollectionQuery {
+        projectCollection {
+          items {
+            sys {
+              id
             }
+            # add the fields you want to query
+            title
+            dateTime
+            description
+            tags
           }
         }
       }
