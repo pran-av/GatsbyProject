@@ -8,6 +8,7 @@
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.6",
     "dotenv": "^16.0.3",
+    "faker": "^6.6.6",
     "gatsby": "^5.9.1",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-manifest": "^5.9.0",

@@ -2,7 +2,7 @@ import React from "react";
 //import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
-function ProjectCard ( { slug, title, dateTime, description, tag} ) {
+function ProjectCard ( { title, slug, dateTime, description, tags } ) {
     return(
         <div class="container mx-auto">
             <div class="border mx-4 mt-7 max-w-fit rounded">
@@ -10,7 +10,7 @@ function ProjectCard ( { slug, title, dateTime, description, tag} ) {
                     <Link to={slug}> { title } </Link>
                 </h2>
                 <div class="flex mt-3 mb-3 ml-4 justify-evenly">
-                    <h3 class="border px-3 rounded-lg">{ tag }</h3>
+                    <h3 class="border px-3 rounded-lg">{ tags }</h3>
                     <h3 class="border px-3 rounded-lg">Tag 2</h3>
                     <h3 class="border px-3 rounded-lg">Tag 3</h3>
                 </div>

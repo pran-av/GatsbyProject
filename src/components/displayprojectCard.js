@@ -11,6 +11,12 @@ function DisplayProjects() {
           edges {
             node {
               title
+              slug
+              dateTime
+              description{
+                description
+              }
+              tags
             }
           }
         }
@@ -20,17 +26,24 @@ function DisplayProjects() {
 
     return(
         <div class="mx-auto mt-5 mb-5">
+          <div>
+            <h1> FIRST BLOG </h1>
+            <div>
             {
-                latestProjects.edges.map(edge => {
-                    <ProjectCard
-                        //slug = {edge.node.slug}
-                        title = {edge.node.title}
-                        //dateTime = {edge.node.dateTime}
-                        //description = {edge.node.description}
-                        //tags = {edge.node.tags}
-                    />
-                })
-            }
+                  latestProjects.edges.map(edge => {
+                    return(
+                      <ProjectCard
+                          slug = {edge.node.slug}
+                          title = {edge.node.title}
+                          dateTime = {edge.node.dateTime}
+                          description = {edge.node.description}
+                          tags = {edge.node.tags}
+                      />
+                    )                      
+                  })
+              }
+            </div>
+          </div>
         </div>
     )
 }
